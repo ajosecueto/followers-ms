@@ -1,0 +1,18 @@
+type Profile {
+    userId: ID!
+    username: String!
+    names: String!
+    photo: String
+    verified: Boolean
+}
+
+type Mutation {
+    follow(userId: String!): Boolean!
+    unfollow(userId: String!): Boolean!
+}
+
+
+type Query {
+    getFollowers(userId: String!): [Profile!]
+    getFollowees(userId: String!): [Profile!]
+}
